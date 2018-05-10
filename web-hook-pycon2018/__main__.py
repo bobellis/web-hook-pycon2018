@@ -21,7 +21,7 @@ async def issue_opened_event(event, gh, *args, **kwargs):
 @router.register("pull_request", action="closed")
 async def pull_request_closed_event(event, gh, *args, **kwargs):
     url = event.data["pull_request"]["url"]
-    author = event.data["user"]["login"]
+    author = event.data["pull_request"]["user"]["login"]
     merged = event.data["merged"]
     print (author)
     print (merged)
