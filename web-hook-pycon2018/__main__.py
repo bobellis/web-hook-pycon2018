@@ -22,7 +22,8 @@ async def issue_opened_event(event, gh, *args, **kwargs):
 async def pull_request_closed_event(event, gh, *args, **kwargs):
     url = event.data["pull_request"]["url"]
     author = event.data["pull_request"]["user"]["login"]
-    merged = event.data["merged"]
+    merged = event.data["pull_request"]["merged"]
+    print event.data
     print (author)
     print (merged)
     if merged:
